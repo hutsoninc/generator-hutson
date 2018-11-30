@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "AustinLeeGordon",
+      "authorEmail": "gordon.austin2@gmail.com",
+      "authorUrl": "http://www.austinleegordon.com"
+    }
+  }
+}
