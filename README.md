@@ -9,8 +9,7 @@ yo generator for Hutson projects
 First, install [Yeoman](http://yeoman.io) and generator-hutson using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
-npm install -g generator-hutson
+npm install -g yo generator-hutson
 ```
 
 Then generate your new project:

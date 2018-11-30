@@ -2,6 +2,7 @@
 const googleAds = "Google Ads";
 const socialMedia = "Social Media";
 const email = "Email";
+const website = "Website";
 
 // Template file and destination file paths
 module.exports = {
@@ -48,6 +49,15 @@ module.exports = {
   email: {
     template: "Email Banner.psd",
     destination: `${email}/Email Banner.psd`
+  },
+  // Website
+  websiteSlider: {
+    template: "Website Slider Image.psd",
+    destination: `${website}/Website Slider Image.psd`
+  },
+  websitePromo: {
+    template: "Website Promo Image.psd",
+    destination: `${website}/Website Promo Image.psd`
   },
   // VS Networks
   vsNetworks: {

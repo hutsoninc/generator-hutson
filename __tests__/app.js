@@ -19,6 +19,8 @@ describe("generator-hutson:app", () => {
           "includeSocialMediaPost",
           "includeMailer",
           "includeEmail",
+          "includeWebsiteSlider",
+          "includeWebsitePromo",
           "includeVSNetworks",
           "includeUTMBuilder"
         ],
@@ -38,7 +40,9 @@ describe("generator-hutson:app", () => {
       path.join(__dirname, "tmp/Mailer.indd"),
       path.join(__dirname, "tmp/Search Ads.xlsx"),
       path.join(__dirname, "tmp/UTM Builder.xlsx"),
-      path.join(__dirname, "tmp/VS Networks.psd")
+      path.join(__dirname, "tmp/VS Networks.psd"),
+      path.join(__dirname, "tmp/Website/Website Slider Image.psd"),
+      path.join(__dirname, "tmp/Website/Website Promo Image.psd")
     ]);
   });
 

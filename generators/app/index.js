@@ -60,6 +60,14 @@ module.exports = class extends Generator {
             value: "includeEmail"
           },
           {
+            name: "Website Slider Image",
+            value: "includeWebsiteSlider"
+          },
+          {
+            name: "Website Promo Image",
+            value: "includeWebsitePromo"
+          },
+          {
             name: "VS Networks",
             value: "includeVSNetworks"
           },
@@ -266,13 +274,29 @@ module.exports = class extends Generator {
       );
     }
 
-    // VS Networks
-    if (creative.indexOf("includeVSNetworks") >= 0) {
+    // Website Slider
+    if (creative.indexOf("includeWebsiteSlider") >= 0) {
       this.fs.copy(
-        this.templatePath(config.vsNetworks.template),
-        this.destinationPath(config.vsNetworks.destination)
+        this.templatePath(config.websiteSlider.template),
+        this.destinationPath(config.websiteSlider.destination)
       );
     }
+
+    // Website Promo
+    if (creative.indexOf("includeWebsitePromo") >= 0) {
+      this.fs.copy(
+        this.templatePath(config.websitePromo.template),
+        this.destinationPath(config.websitePromo.destination)
+      );
+    }
+    
+    // VS Networks
+      if (creative.indexOf("includeVSNetworks") >= 0) {
+        this.fs.copy(
+          this.templatePath(config.vsNetworks.template),
+          this.destinationPath(config.vsNetworks.destination)
+        );
+      }
 
     // UTM Builder
     if (creative.indexOf("includeUTMBuilder") >= 0) {
