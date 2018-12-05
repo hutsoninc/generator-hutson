@@ -68,6 +68,10 @@ module.exports = class extends Generator {
             value: "includeWebsitePromo"
           },
           {
+            name: "Website Landing Page",
+            value: "includeWebsiteLandingPage"
+          },
+          {
             name: "VS Networks",
             value: "includeVSNetworks"
           },
@@ -287,6 +291,14 @@ module.exports = class extends Generator {
       this.fs.copy(
         this.templatePath(config.websitePromo.template),
         this.destinationPath(config.websitePromo.destination)
+      );
+    }
+
+    // Website Landing Page
+    if (creative.indexOf("includeWebsiteLandingPage") >= 0) {
+      this.fs.copy(
+        this.templatePath(config.websiteLandingPage.template),
+        this.destinationPath(config.websiteLandingPage.destination)
       );
     }
     

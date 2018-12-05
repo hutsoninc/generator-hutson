@@ -59,6 +59,10 @@ module.exports = {
     template: "Website Promo Image.psd",
     destination: `${website}/Website Promo Image.psd`
   },
+  websiteLandingPage: {
+    template: "Website Landing Page Header.psd",
+    destination: `${website}/Website Landing Page Header.psd`
+  },
   // VS Networks
   vsNetworks: {
     template: "VS Networks.psd",
