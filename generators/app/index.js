@@ -77,7 +77,13 @@ module.exports = class extends Generator {
           },
           {
             name: "UTM Builder",
-            value: "includeUTMBuilder"
+            value: "includeUTMBuilder",
+            checked: true
+          },
+          {
+            name: "Co-op Helpers",
+            value: "includeCoopHelpers",
+            checked: true
           }
         ]
       }
@@ -301,20 +307,56 @@ module.exports = class extends Generator {
         this.destinationPath(config.websiteLandingPage.destination)
       );
     }
-    
+
     // VS Networks
-      if (creative.indexOf("includeVSNetworks") >= 0) {
-        this.fs.copy(
-          this.templatePath(config.vsNetworks.template),
-          this.destinationPath(config.vsNetworks.destination)
-        );
-      }
+    if (creative.indexOf("includeVSNetworks") >= 0) {
+      this.fs.copy(
+        this.templatePath(config.vsNetworks.template),
+        this.destinationPath(config.vsNetworks.destination)
+      );
+    }
 
     // UTM Builder
     if (creative.indexOf("includeUTMBuilder") >= 0) {
       this.fs.copy(
         this.templatePath(config.utmBuilder.template),
         this.destinationPath(config.utmBuilder.destination)
+      );
+    }
+
+    // Co-op Helpers
+    if (creative.indexOf("includeCoopHelpers") >= 0) {
+      let preapprovalText = "Co-op Preapproval Requirements\n\n";
+
+      if (creative.indexOf("includeGoogleAds") >= 0) {
+        // Update preapproval text
+        preapprovalText += "Google Ads\n"
+          + "- Screenshots of ads\n"
+          + "- Landing page URL\n"
+          + "\n";
+      }
+
+      if (creative.indexOf("includeGoogleSearch") >= 0) {
+        // Update preapproval text
+        preapprovalText += "Google Search\n"
+          + "- Screenshots of ads\n"
+          + "- List of keywords\n"
+          + "- Landing page URL\n"
+          + "\n";
+      }
+
+      if (creative.indexOf("includeSocialMediaAds") >= 0) {
+        // Update preapproval text
+        preapprovalText += "Social Media Ads\n"
+          + "- Screenshots of ads\n"
+          + "- Marketing objective (Brand awareness, Reach, Traffic, Engagement, App installs, Video views, Lead generation, Messages, Conversions, Catalog sales, Store visits)\n"
+          + "- Landing page URL (if applicable)\n"
+          + "\n";
+      }
+
+      this.fs.write(
+        this.destinationPath(config.coopHelper.destination),
+        preapprovalText
       );
     }
   }

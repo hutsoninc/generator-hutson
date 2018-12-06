@@ -72,5 +72,9 @@ module.exports = {
   utmBuilder: {
     template: "UTM Builder.xlsx",
     destination: "UTM Builder.xlsx"
+  },
+  // Co-op Helper
+  coopHelper: {
+    destination: "Co-op Preapproval Checklist.txt"
   }
 };
